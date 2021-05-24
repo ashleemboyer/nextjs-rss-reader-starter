@@ -3,6 +3,7 @@
   border-radius: 8px;
   margin-bottom: 24px;
   padding: 16px;
+  word-wrap: break-word;
 }
 
 .article h2 {
@@ -20,10 +21,19 @@
   margin-bottom: 8px;
 }
 
+.article > div {
+  margin-bottom: 12px;
+}
+
 .article > div span:not(:last-child) {
   border-right: 2px solid gray;
   padding-right: 12px;
   margin-right: 12px;
+}
+
+.article > a {
+  margin-right: 12px;
+  text-align: right;
 }
 
 .article > hr {
@@ -36,4 +46,16 @@
 .article img {
   height: auto;
   width: 100%;
+}
+
+.article pre {
+  background-color: lightgray;
+  padding: 12px;
+  overflow-x: scroll;
+}
+
+.article blockquote {
+  border-left: 4px solid gray;
+  margin: 20px;
+  padding: 12px;
 }
