@@ -1,0 +1,39 @@
+.article {
+  border: 1px solid black;
+  border-radius: 8px;
+  margin-bottom: 24px;
+  padding: 16px;
+}
+
+.article h2 {
+  font-size: 1.5rem;
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.article p {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.article p:not(:last-child) {
+  margin-bottom: 8px;
+}
+
+.article > div span:not(:last-child) {
+  border-right: 2px solid gray;
+  padding-right: 12px;
+  margin-right: 12px;
+}
+
+.article > hr {
+  border: none;
+  border-bottom: 1px solid gray;
+  height: 0;
+  margin: 16px 0;
+}
+
+.article img {
+  height: auto;
+  width: 100%;
+}

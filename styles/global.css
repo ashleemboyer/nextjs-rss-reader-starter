@@ -6,3 +6,9 @@ body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
 }
+
+#__next {
+  margin: 0 auto;
+  max-width: 700px;
+  padding: 24px;
+}
