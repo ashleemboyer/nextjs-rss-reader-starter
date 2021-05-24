@@ -1,0 +1,87 @@
+.article {
+  margin-top: 24px;
+  word-wrap: break-word;
+}
+
+.forHomePage {
+  border: 1px solid black;
+  border-radius: 8px;
+  margin-bottom: 24px;
+  margin-top: 0;
+  padding: 16px;
+}
+
+/* Styles for the article attributes */
+
+.article > h2 {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+  margin-top: 0;
+}
+
+.article > div:not(:last-child) {
+  margin-bottom: 12px;
+}
+
+.article > div:not(:last-child) span:not(:last-child) {
+  border-right: 2px solid gray;
+  margin-right: 12px;
+  padding-right: 12px;
+}
+
+.article > a {
+  margin-right: 12px;
+  text-align: right;
+}
+
+.article > hr {
+  border: none;
+  border-bottom: 1px solid gray;
+  height: 0;
+  margin: 16px 0;
+}
+
+/* Styles for the description/content */
+
+.article > :last-child {
+  font-size: 1.1rem;
+  line-height: 140%;
+}
+
+.article > :last-child img {
+  height: auto;
+  width: 100%;
+}
+
+.article > :last-child pre,
+.article > :last-child code {
+  background-color: lightgray;
+  font-size: 0.9rem;
+}
+
+.article > :last-child pre {
+  line-height: 150%;
+  overflow-x: scroll;
+  padding: 12px;
+}
+
+.article > :last-child code {
+  padding: 2px;
+}
+
+.article > :last-child blockquote {
+  border-left: 4px solid gray;
+  margin: 20px;
+  padding: 12px;
+}
+
+.article > :last-child table {
+  border-collapse: collapse;
+  margin: 20px;
+}
+
+.article > :last-child th,
+.article > :last-child td {
+  border: 1px solid gray;
+  padding: 4px 8px;
+}
