@@ -2,17 +2,34 @@
 // can read more about Pages in the Next.js docs at:
 // https://nextjs.org/docs/basic-features/pages
 
+import { useRouter } from 'next/router';
 import { getAllArticles } from '@lib/articles';
+import { signOut } from '@lib/firebase';
 import { Article } from '@components';
 
-const HomePage = ({ articles }) => (
-  <div>
-    <h1>My RSS Reader</h1>
-    {articles.map((article) => (
-      <Article key={article.slug} article={article} forHomePage />
-    ))}
-  </div>
-);
+const HomePage = ({ articles }) => {
+  const router = useRouter();
+
+  return (
+    <div>
+      <h1>My RSS Reader</h1>
+      <button
+        onClick={() => {
+          signOut()
+            .then(() => router.replace('/login'))
+            .catch((err) => {
+              alert(err);
+            });
+        }}
+      >
+        Sign Out
+      </button>
+      {articles.map((article) => (
+        <Article key={article.slug} article={article} forHomePage />
+      ))}
+    </div>
+  );
+};
 
 // Fetch all the articles in the feed once per day
 // Read about revalidate here:
