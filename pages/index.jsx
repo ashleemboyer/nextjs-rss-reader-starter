@@ -3,24 +3,13 @@
 // https://nextjs.org/docs/basic-features/pages
 
 import { getAllArticles } from '@lib/articles';
-import styles from '@styles/index.module.css';
+import { Article } from '@components';
 
 const HomePage = ({ articles }) => (
   <div>
     <h1>My RSS Reader</h1>
     {articles.map((article) => (
-      <article className={styles.article} key={article.slug}>
-        <h2 dangerouslySetInnerHTML={{ __html: article.title }} />
-        <div>
-          <span>{article.feedTitle}</span>
-          <span>{article.author}</span>
-          <span>{article.pubDate}</span>
-        </div>
-        <a href={article.slug}>Read here</a>
-        <a href={article.link}>Read source</a>
-        <hr />
-        <p dangerouslySetInnerHTML={{ __html: article.description }} />
-      </article>
+      <Article key={article.slug} article={article} forHomePage />
     ))}
   </div>
 );
