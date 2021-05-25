@@ -1,17 +1,20 @@
 import { useState } from 'react';
-import { useRouter } from 'next/router';
 import { signIn } from '@lib/firebase';
+import { LoggedInContent } from '@components';
 
 const LoginPage = () => {
-  const router = useRouter();
-  const [loading, setLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   return (
-    <>
+    <LoggedInContent>
       <h1>Log In</h1>
       <form
         onSubmit={(e) => {
           e.preventDefault();
+
+          if (isLoading) {
+            return;
+          }
 
           const inputs = e.target.querySelectorAll('input');
           const email = inputs[0].value;
@@ -27,21 +30,23 @@ const LoginPage = () => {
             return;
           }
 
-          setLoading(true);
+          setIsLoading(true);
 
           signIn(email, password).catch((err) => {
-            setLoading(false);
+            setIsLoading(false);
             alert(err);
           });
         }}
       >
         <label htmlFor="email">Email</label>
-        <input id="email" type="email" />
+        <input disabled={isLoading} id="email" type="email" />
         <label htmlFor="password">Password</label>
-        <input id="password" type="password" />
-        <button type="submit">{loading ? 'Loading...' : "Let's Go!"}</button>
+        <input disabled={isLoading} id="password" type="password" />
+        <button disabled={isLoading} type="submit">
+          {isLoading ? 'Loading...' : "Let's Go!"}
+        </button>
       </form>
-    </>
+    </LoggedInContent>
   );
 };
 
