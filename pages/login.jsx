@@ -43,7 +43,7 @@ const LoginPage = () => {
         <label htmlFor="password">Password</label>
         <input disabled={isLoading} id="password" type="password" />
         <button disabled={isLoading} type="submit">
-          {isLoading ? 'Loading...' : "Let's Go!"}
+          {isLoading ? 'Loading...' : 'Sign in'}
         </button>
       </form>
     </LoggedInContent>
