@@ -8,16 +8,18 @@ import { Article, LoggedInContent } from '@components';
 
 const HomePage = ({ articles }) => (
   <LoggedInContent>
-    <h1>My RSS Reader</h1>
-    <button
-      onClick={() => {
-        signOut().catch((err) => {
-          alert(err);
-        });
-      }}
-    >
-      Sign Out
-    </button>
+    <header>
+      <h1>My RSS Reader</h1>
+      <button
+        onClick={() => {
+          signOut().catch((err) => {
+            alert(err);
+          });
+        }}
+      >
+        Sign Out
+      </button>
+    </header>
     {articles.map((article) => (
       <Article key={article.slug} article={article} forHomePage />
     ))}
