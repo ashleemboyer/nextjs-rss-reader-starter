@@ -1,11 +1,11 @@
 import { getAllArticles } from '@lib/articles';
-import { Article } from '@components';
+import { Article, LoggedInContent } from '@components';
 
 const ArticlePage = ({ article }) => (
-  <>
+  <LoggedInContent>
     <a href="/">Home</a>
     <Article article={article} />
-  </>
+  </LoggedInContent>
 );
 
 export async function getStaticPaths() {
